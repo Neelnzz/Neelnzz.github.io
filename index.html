@@ -9,6 +9,24 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+        <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        </script>
         <style>
             body
             {
@@ -76,10 +94,28 @@
             .table{
                 background-color:  rgb(228, 120, 78);
             }
-            
+            #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgb(216, 75, 19);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+            }
+
+            #myBtn:hover {
+            background-color: #555;
+            }
                                 
             @media only screen and (max-width: 600px) {
-                body
+            body
             {
                 background-color: rgb(189, 186, 33);
                 text-align: center;
@@ -145,10 +181,30 @@
             .table{
                 background-color:  rgb(228, 120, 78);
             }
+            #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color:rgb(216, 75, 19);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+            }
+
+            #myBtn:hover {
+            background-color: #555;
+            }
+        }
         </style>
     </head>
     <body>
-        
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <div class="mainClass_Parent" style="width:800px; margin:0 auto;">            
                 <!-- Contextual button for informational alert messages -->
                 <a href="#rcorners1"><button type = "button" class = "btn btn-info">About Me</button></a>
